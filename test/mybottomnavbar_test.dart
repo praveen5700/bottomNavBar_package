@@ -19,9 +19,9 @@ import 'package:mybottomnavbar/mybottomnavbar.dart';
 void main() {
   testWidgets('DynamicBottomNavBar Widget Test', (WidgetTester tester) async {
     final List<NavBarItem> items = [
-      NavBarItem(icon: Icons.home, label: 'Home', route: '/home'),
-      NavBarItem(icon: Icons.search, label: 'Search', route: '/search'),
-      NavBarItem(icon: Icons.favorite, label: 'Favorite', route: '/favorite'),
+      NavBarItem(icon: Icons.home, label: 'Home'),
+      NavBarItem(icon: Icons.search, label: 'Search'),
+      NavBarItem(icon: Icons.favorite, label: 'Favorite'),
     ];
 
     int selectedIndex = 0;

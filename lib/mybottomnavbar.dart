@@ -7,6 +7,8 @@ class DynamicBottomNavBar extends StatefulWidget {
   final ValueChanged<int> onTap;
   final Color? iconColor;
   final Color? labelColor;
+  final Color? backgroundColor;
+  final double? elevation;
 
   const DynamicBottomNavBar({
     Key? key,
@@ -15,6 +17,8 @@ class DynamicBottomNavBar extends StatefulWidget {
     required this.onTap,
     this.iconColor = Colors.blue,
     this.labelColor = Colors.blue, 
+    this.backgroundColor,
+    this.elevation, 
   }) : assert(items.length >= 2 && items.length <= 6,
             'The number of items must be between 2 and 6'),
         super(key: key);

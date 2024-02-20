@@ -43,6 +43,8 @@ class DynamicBottomNavBarState extends State<DynamicBottomNavBar> {
       onTap: widget.onTap,
       selectedLabelStyle: TextStyle(color: widget.labelColor),
       unselectedLabelStyle:const TextStyle(color: Colors.grey),
+      backgroundColor: widget.backgroundColor,
+      elevation: widget.elevation,
     );
   }
 }

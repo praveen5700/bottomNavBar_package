@@ -10,13 +10,13 @@ class DynamicBottomNavBar extends StatefulWidget {
   final Color unselectedItemColor;
   final Color selectedLabelColor;
   final Color unselectedLabelColor;
+  final Color selectedIconColor;
+  final Color unselectedIconColor;
   final Color backgroundColor;
   final double elevation;
   final double iconSize;
   final double selectedFontSize;
   final double unselectedFontSize;
-  final TextStyle? selectedLabelStyle;
-  final TextStyle? unselectedLabelStyle;
   final bool? showSelectedLabels;
   final bool? showUnselectedLabels;
 
@@ -29,15 +29,15 @@ class DynamicBottomNavBar extends StatefulWidget {
     this.unselectedItemColor = Colors.grey,
     this.selectedLabelColor = Colors.blue,
     this.unselectedLabelColor = Colors.grey,
+    this.selectedIconColor = Colors.blue, 
+    this.unselectedIconColor =Colors.blue,
     this.backgroundColor = Colors.white,
     this.elevation = 0.0,
     this.iconSize = 24.0,
     this.selectedFontSize = 14.0,
     this.unselectedFontSize = 12.0,
-    this.selectedLabelStyle,
-    this.unselectedLabelStyle,
     this.showSelectedLabels = true,
-    this.showUnselectedLabels = true,
+    this.showUnselectedLabels = true, 
   }):assert(
             items.length >= 2 &&
                 items.length <= 6 &&
@@ -61,20 +61,25 @@ class DynamicBottomNavBarState extends State<DynamicBottomNavBar> {
     return BottomNavigationBar(
       items: widget.items
           .map((item) => BottomNavigationBarItem(
-                icon: Icon(item.icon,size: widget.iconSize,),
+                icon: Icon(item.icon),
                 label: item.label,
               ))
           .toList(),
       currentIndex: widget.currentIndex,
-      selectedItemColor: widget.selectedItemColor,
-      unselectedItemColor: widget.unselectedItemColor,
       onTap: widget.onTap,
-      selectedLabelStyle: TextStyle(color: widget.selectedLabelColor,fontSize: widget.selectedFontSize),
-      unselectedLabelStyle: TextStyle(color: widget.unselectedLabelColor,fontSize: widget.unselectedFontSize),
       backgroundColor: widget.backgroundColor,
       elevation: widget.elevation,
-      // selectedFontSize: widget.selectedFontSize,
-      // unselectedFontSize: widget.unselectedFontSize, 
+      selectedItemColor: widget.selectedItemColor,
+      unselectedItemColor: widget.unselectedItemColor,
+      selectedFontSize: widget.selectedFontSize,
+      unselectedFontSize: widget.unselectedFontSize,
+      iconSize: widget.iconSize,
+      selectedIconTheme: IconThemeData(
+        color: widget.selectedIconColor
+      ),
+      unselectedIconTheme: IconThemeData(
+       color:widget.unselectedIconColor  
+      ),
     );
   }
 }

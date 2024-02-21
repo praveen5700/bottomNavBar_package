@@ -43,8 +43,8 @@ class DynamicBottomNavBar extends StatefulWidget {
                 items.length <= 6 &&
                 iconSize > 0 &&
                 iconSize <= 40 &&
-                selectedFontSize > 0 &&
-                selectedFontSize <= 40 &&
+                selectedFontSize >= 10 &&
+                selectedFontSize <= 30 &&
                 unselectedFontSize > 0 &&
                 unselectedFontSize <= 40 &&
                 elevation >= 0,
@@ -61,7 +61,7 @@ class DynamicBottomNavBarState extends State<DynamicBottomNavBar> {
     return BottomNavigationBar(
       items: widget.items
           .map((item) => BottomNavigationBarItem(
-                icon: Icon(item.icon),
+                icon: Icon(item.icon,size: widget.iconSize,),
                 label: item.label,
               ))
           .toList(),
@@ -69,13 +69,12 @@ class DynamicBottomNavBarState extends State<DynamicBottomNavBar> {
       selectedItemColor: widget.selectedItemColor,
       unselectedItemColor: widget.unselectedItemColor,
       onTap: widget.onTap,
-      selectedLabelStyle: TextStyle(color: widget.selectedLabelColor),
-      unselectedLabelStyle: TextStyle(color: widget.unselectedLabelColor),
+      selectedLabelStyle: TextStyle(color: widget.selectedLabelColor,fontSize: widget.selectedFontSize),
+      unselectedLabelStyle: TextStyle(color: widget.unselectedLabelColor,fontSize: widget.unselectedFontSize),
       backgroundColor: widget.backgroundColor,
       elevation: widget.elevation,
-      selectedFontSize: widget.selectedFontSize,
-      unselectedFontSize: widget.unselectedFontSize,
-      
+      // selectedFontSize: widget.selectedFontSize,
+      // unselectedFontSize: widget.unselectedFontSize, 
     );
   }
 }

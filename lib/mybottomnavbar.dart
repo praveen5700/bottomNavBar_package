@@ -45,8 +45,8 @@ class DynamicBottomNavBar extends StatefulWidget {
                 iconSize <= 40 &&
                 selectedFontSize >= 10 &&
                 selectedFontSize <= 30 &&
-                unselectedFontSize > 0 &&
-                unselectedFontSize <= 40 &&
+                unselectedFontSize > 10 &&
+                unselectedFontSize <= 30 &&
                 elevation >= 0,
           'The number of items must be between 2 and 6 and the icon size should be between 0 and 50 pixels'),
         super(key: key);
